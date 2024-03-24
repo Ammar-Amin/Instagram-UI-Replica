@@ -229,11 +229,19 @@ menu .active {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
     margin-top: 2rem;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
 }
 
 .stories-img {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 80px;

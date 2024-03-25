@@ -203,6 +203,25 @@ menu .active {
 
 
 /* stories */
+.storyBg {
+    width: 96%;
+    height: 100vh;
+    background: rgb(69, 61, 61);
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+}
+
+.wStory {
+    opacity: 1;
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .stories-title {
     display: flex;
@@ -307,11 +326,12 @@ menu .active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     gap: 11px;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .post-box {
     width: 300px;
+    position: relative;
 }
 
 .post-box img {
@@ -319,6 +339,18 @@ menu .active {
     height: 344px;
     object-fit: cover;
     border-radius: 0.5rem;
+}
+
+.ri-heart-3-line {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.3s;
+
+    font-size: 90px;
+    color: white;
 }
 
 .post-box h5 {
@@ -372,6 +404,7 @@ menu .active {
 .likes i {
     font-size: 20px;
     margin-right: 4px;
+    border-radius: 50%;
 }
 
 .no-Like {
@@ -418,5 +451,16 @@ menu .active {
     .stories-img .add {
         width: 50px;
         height: 50px;
+    }
+}
+
+@media (width < 430px) {
+
+    .header-content .btn {
+        display: none;
+    }
+
+    .post-box {
+        margin: 0 auto;
     }
 }

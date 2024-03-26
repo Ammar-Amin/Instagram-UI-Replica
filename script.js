@@ -26,8 +26,10 @@ function likePost() {
         if (e.target.classList.contains('like')) {
             click = !click
             if (click) {
+                e.target.style.color = 'white';
                 e.target.style.backgroundColor = 'red'
             } else {
+                e.target.style.color = 'black';
                 e.target.style.backgroundColor = 'white'
             }
         }
@@ -36,16 +38,23 @@ function likePost() {
 likePost();
 
 
-// let likeIcons = document.querySelectorAll('.like');
-// let click = false;
-// likeIcons.forEach(like => {
-//     like.addEventListener('click', () => {
-//         console.log('click')
-//         click = !click;
-//         if (click) {
-//             like.style.backgroundColor = 'red'
-//         } else {
-//             like.style.backgroundColor = 'white'
-//         }
-//     })
-// });
+const images = document.querySelectorAll('.img-box');
+
+images.forEach((img, index) => {
+    img.addEventListener('dblclick', function (e) {
+        console.log(e.target, index);
+        let heart = document.getElementById(`${index}`);
+        heart.style.transform = 'translate(-50%, -50%) scale(1)'
+        heart.style.opacity = 0.8;
+
+        let loveIcon = document.getElementById(`likeNo-${index}`);
+        loveIcon.style.backgroundColor = 'red'
+        loveIcon.style.color = "white";
+
+        setTimeout(() => {
+            heart.style.transform = 'translate(-50%, -50%) scale(0)'
+            heart.style.opacity = 0;
+        }, 750);
+
+    })
+})
